@@ -1,0 +1,37 @@
+{
+  "name": "it-keepalive",
+  "version": "0.0.0",
+  "description": "Keep an async iterable alive by yielding a value if it doesn't yield a value before the timeout",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose",
+    "coverage": "nyc --reporter=lcov --reporter=text ava --verbose",
+    "lint": "standard"
+  },
+  "keywords": [
+    "keepalive",
+    "keep",
+    "alive",
+    "beacon",
+    "race"
+  ],
+  "author": "Alan Shaw",
+  "license": "MIT",
+  "dependencies": {
+    "get-iterator": "^1.0.2"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "it-pipe": "^1.0.1",
+    "nyc": "^14.1.1",
+    "standard": "^14.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanshaw/it-keepalive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alanshaw/it-keepalive/issues"
+  },
+  "homepage": "https://github.com/alanshaw/it-keepalive#readme"
+}
