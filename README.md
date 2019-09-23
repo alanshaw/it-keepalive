@@ -18,15 +18,13 @@ npm install it-keepalive
 const keepAlive = require('it-keepalive')
 
 const slowStream = (async function * () {
-  while (true) {
-    yield 'A VALUE'
-    // Pause for 1.5s
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    yield 'A SLOW VALUE'
-    yield 'A FAST VALUE'
-    await new Promise(resolve => setTimeout(resolve, 2500))
-    yield 'A VERY SLOW VALUE'
-  }
+  yield 'A VALUE'
+  // Pause for 1.5s
+  await new Promise(resolve => setTimeout(resolve, 1500))
+  yield 'A SLOW VALUE'
+  yield 'A FAST VALUE'
+  await new Promise(resolve => setTimeout(resolve, 2500))
+  yield 'A VERY SLOW VALUE'
 })()
 
 const aliveStream = keepAlive(
