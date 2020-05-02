@@ -19,11 +19,13 @@ module.exports = (getKeepAliveValue, options) => {
             sourceNext = source.next()
           }
 
+          let timer
           const timeout = new Promise(resolve => {
-            setTimeout(() => resolve({ value: KEEP_ALIVE }), options.timeout || 1000)
+            timer = setTimeout(() => resolve({ value: KEEP_ALIVE }), options.timeout || 1000)
           })
 
           const { done, value } = await Promise.race([timeout, sourceNext])
+          clearTimeout(timer)
 
           if (done) return { done }
 
